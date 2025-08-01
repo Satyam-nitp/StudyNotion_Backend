@@ -15,7 +15,7 @@ const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 
 dotenv.config();
-const PORT =process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 
 //database connect
 database.connect();
@@ -24,17 +24,17 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-    cors({
-        origin: ["https://edtech-platfrom.vercel.app/", "*"],
-        credentials: true,
-    })
-)
+  cors({
+    origin: "https://edtech-platfrom.vercel.app",
+    credentials: true,
+  })
+);
 app.use(
-    fileUpload({
-        useTempFiles: true,
-        tempFileDir: "/tmp",
-    })
-)
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp",
+  })
+);
 
 //cloudinary connection
 cloudinaryConnect();
@@ -48,13 +48,13 @@ app.use("/api/v1/reach", contactUsRoute);
 
 //def route
 
-app.get("/", (req, res)=>{
-    return res.json({
-        success: true,
-        message: "Your server is up and running...."
-    });
+app.get("/", (req, res) => {
+  return res.json({
+    success: true,
+    message: "Your server is up and running....",
+  });
 });
 
-app.listen(PORT, ()=>{
-    console.log(`App is running at port: ${PORT}`);
-})
+app.listen(PORT, () => {
+  console.log(`App is running at port: ${PORT}`);
+});
