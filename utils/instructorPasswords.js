@@ -1,0 +1,1 @@
+// exports default const InstructorPassword=[INSTRUCTOR01];
