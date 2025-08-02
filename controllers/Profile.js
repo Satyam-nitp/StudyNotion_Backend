@@ -81,12 +81,15 @@ exports.deleteAccount = async (req, res) => {
 
     // Delete course progress
     await CourseProgress.deleteMany({ userId: id });
+    console.log("courseProgress deleted");
 
-    // ❗ Delete all reviews by the user
+    //  Delete all reviews by the user
     await RatingAndReview.deleteMany({ user: id });
+    console.log("RatingAndReview deleted");
 
     // Finally delete the user
     await User.findByIdAndDelete(id);
+    console.log("User deleted");
 
     return res.status(200).json({
       success: true,
