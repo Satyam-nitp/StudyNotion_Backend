@@ -85,6 +85,7 @@ exports.signup = async (req, res) => {
     const instructorAccounts = [
       { email: "satyamsingh2004nitp@gmail.com", password: "INST01" },
       { email: "satyamsingh2004alld@gmail.com", password: "INST02" },
+      { email: "princechouhan3010@gmail.com", password: "Prince03" },
     ];
 
     if (
